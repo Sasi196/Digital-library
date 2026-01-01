@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ClassFree</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+  scroll-behavior:smooth;
+}
+
+/* HIDDEN */
+.hidden{display:none;}
+
+/* ================= LANDING PAGE ================= */
+.landing{
+  min-height:100vh;
+  background:linear-gradient(to right,#d695c9,#a4d8d5);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+}
+
+.landing h1{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.landing p{
+  font-size:18px;
+  max-width:800px;
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+.features{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:40px;
+}
+
+.feature-box{
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  width:280px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.feature-box h3{
+  margin-bottom:10px;
+}
+
+.scroll-btn{
+  margin-top:20px;
+  padding:14px 30px;
+  font-size:16px;
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  border-radius:30px;
+}
+
+/* ================= LOGIN SECTION ================= */
+.login-section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* AUTH CARD */
+.container{
+  background:#d695c9;
+  width:420px;
+  padding:40px;
+  border-radius:8px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+/* TABS */
+.tabs{
+  display:flex;
+  margin-bottom:20px;
+}
+
+.tabs button{
+  flex:1;
+  padding:10px;
+  border:none;
+  cursor:pointer;
+  background:#a4d8d5;
+  font-weight:bold;
+}
+
+.tabs button.active{
+  background:#202020;
+  color:#fff;
+}
+
+/* INPUT FLOAT LABEL */
+.input-group{
+  position:relative;
+  margin-bottom:18px;
+}
+
+.input-group input{
+  width:100%;
+  padding:14px;
+  border:1px solid #47b84d;
+  border-radius:4px;
+}
+
+.input-group label{
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#999;
+  background:#fff;
+  padding:0 5px;
+  transition:0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label{
+  top:-8px;
+  font-size:12px;
+  color:#45a8cf;
+}
+
+select{
+  width:100%;
+  padding:12px;
+  margin-bottom:20px;
+}
+
+.btn{
+  width:100%;
+  padding:14px;
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+/* ================= DASHBOARDS ================= */
+.dashboard{
+  min-height:100vh;
+  padding:40px;
+}
+
+.dashboard h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* STUDENT */
+.subjects{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.subjects button{
+  width:180px;
+  height:100px;
+  border:none;
+  border-radius:14px;
+  font-size:18px;
+  font-weight:bold;
+  color:#fff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.english{background:#ff6b6b;}
+.maths{background:#4dabf7;}
+.science{background:#51cf66;}
+.social{background:#ffa94d;}
+
+.subjects button:hover{
+  transform:translateY(-6px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* TEACHER */
+.upload-box{
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  max-width:500px;
+  margin:auto;
+}
+
+.upload-box label{
+  display:block;
+  margin-top:15px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+  <!-- ================= LANDING PAGE ================= -->
+<section class="landing">
+  <h1>Welcome to ClassFree</h1>
+  <p>
+    ClassFree is a smart digital learning platform designed for students and teachers.
+    Students can access subject-wise lessons, videos, PDFs, notes, and tests.
+    Teachers can upload educational content and manage learning resources easily.
+  </p>
+
+  <div class="features">
+    <div class="feature-box">
+      <h3>🎓 Student Dashboard</h3>
+      <p>Access English, Maths, Science & Social subjects with videos, notes, PDFs and quizzes.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>👩‍🏫 Teacher Dashboard</h3>
+      <p>Upload video lectures, PDFs, notes and manage learning materials efficiently.</p>
+    </div>
+  </div>
+
+  <button class="scroll-btn" onclick="document.getElementById('login').scrollIntoView()">
+    Login / Sign Up ↓
+  </button>
+</section>
+
+<!-- ================= LOGIN SECTION ================= -->
+<section id="login" class="login-section">
+  <div id="auth" class="container">
+    <div class="logo">ClassFree</div>
+
+    <div class="tabs">
+      <button id="signinBtn" class="active" onclick="openSignIn()">Sign In</button>
+      <button id="signupBtn" onclick="openSignUp()">Sign Up</button>
+    </div>
+
+  <!-- SIGN IN -->
+  <div id="signin">
+    <div class="input-group">
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+
+    <div class="input-group">
+      <input type="password" required>
+      <label>Password</label>
+    </div>
+
+    <select id="signinRole">
+      <option value="student">Student</option>
+      <option value="teacher">Teacher</option>
+    </select>
+
+    <button class="btn" onclick="login()">Sign In</button>
+  </div>
+
+  <!-- SIGN UP -->
+  <div id="signup" class="hidden">
+    <div class="input-group">
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+
+    <div class="input-group">
+      <input type="password" required>
+      <label>Password</label>
+    </div>
+
+    <select id="signupRole">
+      <option value="student">Student</option>
+      <option value="teacher">Teacher</option>
+    </select>
+
+    <button class="btn" onclick="register()">Create Account</button>
+  </div>
+</div>
+
+<!-- STUDENT DASHBOARD -->
+<div id="studentDash" class="dashboard hidden">
+  <h1>Student Dashboard</h1>
+  <div class="student-info">
+    <h2>Welcome to Your Learning Space 📚</h2>
+    <p>
+      This dashboard gives you access to all your subjects in one place.
+      Click on any subject below to explore video lectures, PDF materials,
+      notes, and practice tests prepared by your teachers.
+      Learn at your own pace and track your progress easily.
+    </p>
+  </div>
+  
+
+
+  <div class="subjects">
+    <a href="english.html"><button class="english">📘 English</button></a>
+    <a href="maths2.html"><button class="maths">➗ Mathematics</button></a>
+    <a href="science.html"><button class="science">🔬 Science</button></a>
+    <a href="social.html"><button class="social">🌍 Social studies</button></a>
+  </div>
+</div>
+
+<!-- TEACHER DASHBOARD -->
+<div id="teacherDash" class="dashboard hidden">
+  <h1>Teacher Dashboard</h1>
+  <div class="teacher-info">
+    <h2>Welcome Educator 👩‍🏫</h2>
+    <p>
+      This dashboard allows you to upload and manage learning resources for students.
+      Add video lectures, PDF documents, and notes for each subject.
+      Your uploaded content will be instantly accessible to students in their dashboards.
+    </p>
+  </div>
+
+  <div class="upload-box">
+    <label>Upload Video</label>
+    <input type="file">
+
+    <label>Upload PDF</label>
+    <input type="file">
+
+    <label>Upload Notes</label>
+    <input type="file">
+  </div>
+</div>
+
+<script>
+function openSignIn(){
+  signin.classList.remove("hidden");
+  signup.classList.add("hidden");
+  signinBtn.classList.add("active");
+  signupBtn.classList.remove("active");
+}
+
+function openSignUp(){
+  signup.classList.remove("hidden");
+  signin.classList.add("hidden");
+  signupBtn.classList.add("active");
+  signinBtn.classList.remove("active");
+}
+
+function login(){
+  showDashboard(signinRole.value);
+}
+
+function register(){
+  showDashboard(signupRole.value);
+}
+
+function showDashboard(role){
+  auth.classList.add("hidden");
+  role === "student"
+    ? studentDash.classList.remove("hidden")
+    : teacherDash.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

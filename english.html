@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Science | CLASS-FREE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg-main: #f5f7fb;
+  --card-bg: #ffffff;
+  --primary: #2563eb;
+  --primary-soft: #e0ebff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-soft: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg-main);
+  padding: 24px;
+  color: var(--text-main);
+}
+
+/* Header */
+.header {
+  background: white;
+  padding: 20px 28px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.back {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Title */
+.page-title h1 {
+  margin: 0;
+}
+
+.page-title p {
+  margin: 6px 0 24px;
+  color: var(--text-muted);
+}
+
+/* Grid */
+.branch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Branch Card */
+.branch {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.branch-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--primary);
+}
+
+/* Toggle */
+input[type="checkbox"] {
+  display: none;
+}
+
+.open-btn {
+  display: block;
+  background: var(--primary-soft);
+  color: var(--primary);
+  padding: 10px;
+  text-align: center;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+/* Resources */
+.resources {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+input:checked + label + .resources {
+  display: grid;
+}
+
+.resource-btn {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  background: var(--primary-soft);
+  color: var(--primary);
+  transition: 0.2s;
+}
+
+.resource-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">CLASS-FREE</div>
+  <a href="subjects-concepts.html" class="back">← Back</a>
+</header>
+
+<section class="page-title">
+  <h1>English</h1>
+  <p>Choose the below concepts</p>
+</section>
+
+<section class="branch-grid">
+
+  <!-- Grammer -->
+  <div class="branch">
+    <div class="branch-title">grammer</div>
+
+    <input type="checkbox" id="phy">
+    <label for="phy" class="open-btn">View Resources</label>
+
+    <div class="resources">
+      <a href="#" class="resource-btn">📄 PDF</a>
+      <a href="#" class="resource-btn">🌐 Website</a>
+      <a href="#" class="resource-btn">🎥 Video</a>
+      <a href="#" class="resource-btn">📝 Quiz</a>
+    </div>
+  </div>
+
+  <!-- vocabulary -->
+  <div class="branch">
+    <div class="branch-title">vocabulary</div>
+
+    <input type="checkbox" id="chem">
+    <label for="chem" class="open-btn">View Resources</label>
+
+    <div class="resources">
+      <a href="#" class="resource-btn">📄 PDF</a>
+      <a href="#" class="resource-btn">🌐 Website</a>
+      <a href="#" class="resource-btn">🎥 Video</a>
+      <a href="#" class="resource-btn">📝 Quiz</a>
+    </div>
+  </div>
+
+  <!-- Tenses -->
+  <div class="branch">
+    <div class="branch-title">tenses</div>
+
+    <input type="checkbox" id="bio">
+    <label for="bio" class="open-btn">View Resources</label>
+
+    <div class="resources">
+      <a href="#" class="resource-btn">📄 PDF</a>
+      <a href="#" class="resource-btn">🌐 Website</a>
+      <a href="#" class="resource-btn">🎥 Video</a>
+      <a href="#" class="resource-btn">📝 Quiz</a>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
